@@ -17,7 +17,7 @@ public class Logout extends HttpServlet {
      */
     private static final long serialVersionUID = 1L;
     
-    private static final String PAGE_LOGIN = "/";
+    private static final String PAGE_LOGIN = "login.jsf";
 
     /**
      * Realiza o logout.
@@ -32,10 +32,14 @@ public class Logout extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         HttpSession session = request.getSession(false);
-        request.logout();
-        if (session != null) session.invalidate();
         
-        request.getRequestDispatcher(PAGE_LOGIN).forward(request, response);
+        request.logout();
+        
+//        if (session != null) {
+//        	session.invalidate();
+//        }
+        
+        response.sendRedirect(PAGE_LOGIN);
     }
 
 }

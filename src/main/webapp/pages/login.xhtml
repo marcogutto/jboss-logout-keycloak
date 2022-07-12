@@ -10,7 +10,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
         <meta name="theme-color" content="#444"/>
         <meta name="mobile-web-app-capable" content="yes"/>
+		
+		<script>
+			function logout() {
+				
+				setTimeout(() => {  
+			        window.location.href = "http://localhost:8080/home/logout";
+				}, 500);
 
+			}			
+
+        </script>
         
     </h:head>
 
@@ -21,6 +31,10 @@
             <div class="bar"></div>
             <div class="bar"></div>
         </div>
+        
+        <a href="#" title="Sair" onclick="logout();">
+			Sair
+		</a>
 
     </h:body>
 </html>
