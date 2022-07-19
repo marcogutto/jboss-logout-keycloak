@@ -31,15 +31,30 @@ public class Logout extends HttpServlet {
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        HttpSession session = request.getSession(false);
+//        HttpSession session = request.getSession(false);
         
         request.logout();
         
 //        if (session != null) {
 //        	session.invalidate();
 //        }
-        
+    	
+//    	public void handleLogout(HttpServletRequest req) throws ServletException {
+//            if (isLogoutAction(request)) {
+//            	request.logout();
+//            }
+//        }
+
         response.sendRedirect(PAGE_LOGIN);
     }
+    
+//    public boolean isLogoutAction(HttpServletRequest req) {
+//        return getAction(req).equals("logout");
+//    }
+//    
+//    private String getAction(HttpServletRequest req) {
+//        if (req.getParameter("action") == null) return "";
+//        return req.getParameter("action");
+//    }
 
 }
